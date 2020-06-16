@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import com.jspiders.entity.User;
 
-public class userDb {
+public class UserDb {
 
 	public static int addUser(User user) {
 		int status = 0;
