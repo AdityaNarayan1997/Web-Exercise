@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<title>Login</title>
+	<style>
+		table {
+			margin-left: 8%;
+			width: 50%;
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+		<a class="navbar-brand" href="#"><img src="" width="200px" height="55px" class="d-inline-block align-top"
+				alt=""></a>
+	</nav>
+	<br>
+	<br>
+	<table>
+		<tr>
+			<td>
+				<h2>&nbsp; Login</h2>
+			</td>
+			<td>
+				<h2>&nbsp; SignUp</h2>
+		</tr>
+		<tr>
+			<td>
+				<form action="UserLogin" method="post">
+					<div class="container">
+						<label for="uname"><b>UserID</b></label><br> <input type="text" placeholder="Enter Username"
+							name="uname" required>
+						<br> <label for="psw"><b>Password</b></label><br> <input type="password"
+							placeholder="Enter Password" name="psw" required>
+						<br> <br>
+						<button class="btn btn-dark btn-sm" type="submit" value="register">Login</button>
+					</div>
+				</form>
+			</td>
+			<td>
+				<form action="SignUp" method="post">
+					<div class="container">
+						<label for="uname1"><b>UserID</b></label><br> <input type="text" placeholder="Enter Username"
+							name="uname1" required>
+						<br> <label for="psw1"><b>Password</b></label><br> <input type="password"
+							placeholder="Enter Password" name="psw1" required>
+						<br> <br>
+						<button class="btn btn-dark btn-sm" type="submit" value="register">SignUp</button>
+					</div>
+				</form>
+			</td>
+		</tr>
+	</table>
+</body>
+
+</html>
