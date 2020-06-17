@@ -17,6 +17,11 @@ public class Product {
 		this.quantity = quantity;
 	}
 
+	public Product(int id) {
+		super();
+		this.id = id;
+	}
+
 	public int getId() {
 		return id;
 	}

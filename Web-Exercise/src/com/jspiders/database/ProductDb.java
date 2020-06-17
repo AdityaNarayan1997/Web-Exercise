@@ -79,4 +79,64 @@ public class ProductDb {
 		}
 		return status;
 	}
+
+	public static boolean checkAvailability(int id) {
+		boolean status = false;
+		try {
+			Connection con = DB.getCon();
+
+			String querry = " select * from products " + " where product_id=? ";
+			PreparedStatement psmt = con.prepareStatement(querry);
+			psmt.setInt(1, id);
+			ResultSet rs = psmt.executeQuery();
+			if (rs.next()) {
+				status = true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+	public static int editProduct(Product product) {
+		int status = 0;
+		try {
+			Connection con = DB.getCon();
+			String querry = " update products set product_name=?, product_type=?, price=?, quantity=? "
+					+ " where product_id=? ";
+			PreparedStatement psmt = con.prepareStatement(querry);
+			psmt.setString(1, product.getName());
+			psmt.setString(2, product.getType());
+			psmt.setInt(3, product.getPrice());
+			psmt.setInt(4, product.getQuantity());
+			psmt.setInt(5, product.getId());
+
+			status = psmt.executeUpdate();
+			con.close();
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+	public static int deleteProduct(Product product) {
+		int status = 0;
+		try {
+			Connection con = DB.getCon();
+			String querry = " delete from products where product_id=? ";
+			PreparedStatement psmt = con.prepareStatement(querry);
+			psmt.setInt(1, product.getId());
+
+			status = psmt.executeUpdate();
+			con.close();
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+		return status;
+	}
+
 }
