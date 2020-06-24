@@ -11,7 +11,7 @@ public class DB {
 		try {
 			Driver driveref = new Driver();
 			DriverManager.registerDriver(driveref);
-			String dburl = "jdbc:mysql://localhost:3306/web-excercise?user=root&password=root";
+			String dburl = "jdbc:mysql://localhost:3306/web_excercise?user=root&password=root";
 			con = DriverManager.getConnection(dburl);
 			
 		} catch (SQLException e) {

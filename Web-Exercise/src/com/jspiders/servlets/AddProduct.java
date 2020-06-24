@@ -26,7 +26,13 @@ public class AddProduct extends HttpServlet {
 			int id = Integer.parseInt(pid);
 			int price = Integer.parseInt(pri);
 			int quantity = Integer.parseInt(quan);
-
+			boolean duplicate = ProductDb.checkAvailability(id);
+			if(duplicate)
+			{
+				response.getWriter().println("<h3>Product with this ID already Exists</h3>");
+				response.getWriter().println("<a href=\"homepage.html\"><h3>GoTo HomePage</h3></a>");
+				request.getRequestDispatcher("addpage.html").include(request, response);
+			}
 			int status = ProductDb.addProduct(new Product(id, name, type, price, quantity));
 
 			if (status != 0) {
@@ -37,6 +43,7 @@ public class AddProduct extends HttpServlet {
 								+ "</head>\r\n" + "<body>\r\n"
 								+ "<h1 style=\"color:rgba(26, 25, 25, 0.863);\">Product Added to Database</h1>\r\n"
 								+ "</body>\r\n" + "</html>");
+				response.getWriter().println("<a href=\"homepage.html\"><h3>GoTo HomePage</h3></a>");
 				request.getRequestDispatcher("addpage.html").include(request, response);
 
 			}

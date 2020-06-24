@@ -32,14 +32,14 @@ public class DeleteProduct extends HttpServlet {
 							+ "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n"
 							+ "</head>\r\n" + "<body>\r\n"
 							+ "<h1 style=\"color:rgba(26, 25, 25, 0.863);\">Product Deleted from Database</h1>\r\n"
+							+ "<a href=\"homepage.html\"><h3>GoTo HomePage</h3></a>"
 							+ "</body>\r\n" + "</html>");
-
 					request.getRequestDispatcher("deletepage.html").include(request, response);
 
 				}
 			} else {
 				out.println("Product Not Found in Database");
-				out.println("<a href=\"homepage.html\">GoTo HomePage</a>");
+				out.println("<a href=\"homepage.html\"><h3>GoTo HomePage</h3></a>");
 
 			}
 		} else {

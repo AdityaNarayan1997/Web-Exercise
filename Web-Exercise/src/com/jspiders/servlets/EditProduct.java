@@ -38,13 +38,13 @@ public class EditProduct extends HttpServlet {
 							+ "</head>\r\n" + "<body>\r\n"
 							+ "<h1 style=\"color:rgba(26, 25, 25, 0.863);\">Product Updated to Database</h1>\r\n"
 							+ "</body>\r\n" + "</html>");
-
+					response.getWriter().println("<a href=\"homepage.html\"><h3>GoTo HomePage</h3></a>");
 					request.getRequestDispatcher("editpage.html").include(request, response);
 
 				}
 			} else {
 				out.println("Product Not Found in Database");
-				out.println("<a href=\"homepage.html\">GoTo HomePage</a>");
+				out.println("<a href=\"homepage.html\"><h3>GoTo HomePage</h3></a>");
 			}
 		} else {
 			response.getWriter().println("<h1>Please login first</h1>");
