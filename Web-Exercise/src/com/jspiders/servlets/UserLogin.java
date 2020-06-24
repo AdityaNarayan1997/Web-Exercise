@@ -1,10 +1,13 @@
 package com.jspiders.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import com.jspiders.database.UserDb;
 
 public class UserLogin extends HttpServlet {
@@ -18,6 +21,8 @@ public class UserLogin extends HttpServlet {
 
 		boolean bool = UserDb.userAuthentication(email, password);
 		if (bool == true) {
+			HttpSession session=request.getSession();
+			session.setAttribute("admin","true");
 			request.getRequestDispatcher("homepage.html").include(request, response);
 		} else {
 			response.getWriter().println("<!DOCTYPE html>\r\n" + "<html lang=\"en\">\r\n" + "\r\n" + "<head>\r\n"

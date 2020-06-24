@@ -13,6 +13,7 @@ public class DB {
 			DriverManager.registerDriver(driveref);
 			String dburl = "jdbc:mysql://localhost:3306/web-excercise?user=root&password=root";
 			con = DriverManager.getConnection(dburl);
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

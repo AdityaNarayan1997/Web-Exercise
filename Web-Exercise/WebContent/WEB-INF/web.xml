@@ -69,4 +69,14 @@
     <servlet-name>EditProduct</servlet-name>
     <url-pattern>/EditProduct</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserLogout</display-name>
+    <servlet-name>UserLogout</servlet-name>
+    <servlet-class>com.jspiders.servlets.UserLogout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserLogout</servlet-name>
+    <url-pattern>/UserLogout</url-pattern>
+  </servlet-mapping>
 </web-app>
